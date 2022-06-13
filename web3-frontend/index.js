@@ -5,13 +5,12 @@ const contractABI = factoryContractABI;
 const ownerAddress = contractOwnerAddress;
 let contract;
 
-const logd = (log) => {
-  console.log(log);
+const logd = (...args) => {
+  console.log(args);
 };
 
 const handleAccountsChanged = (addresses) => {
-  logd("handleAccountsChanged: ");
-  logd(addresses);
+  logd("handleAccountsChanged: ", addresses);
 
   if (addresses && addresses.length > 0) {
     address = addresses[0];
@@ -78,9 +77,34 @@ const changeEthBalance = async () => {
 const updateTokenStatus = async () => {};
 
 const deployToken = async () => {
-  logd("deployToken");
+  const owner_address = document.querySelector("#owner-address").value;
+  const name = document.querySelector("#name").value;
+  const symbol = document.querySelector("#symbol").value;
+  const decimals = parseInt(document.querySelector("#decimals").value);
+  const supply = parseInt(document.querySelector("#supply").value);
+
+  if (!owner_address && !name && !symbol && !decimals && !supply) {
+    logd("form empty");
+    alert("form empty");
+    return;
+  }
+
+  deployTokenTransaction(owner_address, name, symbol, decimals, supply);
+  updateTokenStatus();
+};
+
+const deployTokenTransaction = async (
+  owner_address,
+  name,
+  symbol,
+  decimals,
+  supply
+) => {
+  logd("deployTokenTrasaction", owner_address, name, symbol, decimals, supply);
+
   const tx = await contract.methods.createToken(
-    [ownerAddress, "JJT", "JJT", 18, 100000000],
+    // [address, "JJH3", "JJH3", 18, 100000000],
+    [owner_address, name, symbol, decimals, supply],
     false,
     true,
     true,
@@ -88,23 +112,23 @@ const deployToken = async () => {
     false,
     true
   );
-  // const gas = await tx.estimateGas({ from: address });
-  const gas = web3.utils.toHex(41000);
-  const gasPrice = await web3.eth.getGasPrice();
-  const data = tx.encodeABI();
-  const nonce = await web3.eth.getTransactionCount(address);
-  const txData = {
-    from: address,
-    to: contractAddress,
-    data: data,
-    gas,
-    gasPrice,
-    nonce,
-    chain: "ropsten",
-  };
 
-  const receipt = await web3.eth.sendTransaction(txData);
+  // const gas = await tx.estimateGas({ from: address });
+  // const gasPrice = await web3.eth.getGasPrice();
+  // const data = tx.encodeABI();
+  // const nonce = await web3.eth.getTransactionCount(address);
+  // const txData = {
+  //   from: address,
+  //   to: contractAddress,
+  //   data: data,
+  //   gas,
+  //   gasPrice,
+  //   nonce,
+  //   chain: "ropsten",
+  // };
+  // const receipt = await web3.eth.sendTransaction(txData);
+
+  const receipt = await tx.send({ from: address });
 
   logd(receipt);
-  updateTokenStatus();
 };

@@ -16,6 +16,34 @@
     <div>
       <button onclick="enableMetamask()">Connect Metamask</button>
       <button onclick="changeEthBalance()">Check my Balance</button>
+    </div>
+    <div>
+      <h2>Deploy Token</h2>
+      <p>
+        <label>owner address: </label>
+        <input
+          type="text"
+          required="true"
+          id="owner-address"
+          name="owner-address"
+        />
+      </p>
+      <p>
+        <label>name: </label>
+        <input type="text" required="true" id="name" , name="name" />
+      </p>
+      <p>
+        <label>symbol: </label>
+        <input type="text" required="true" id="symbol" name="symbol" />
+      </p>
+      <p>
+        <label>decimals: </label>
+        <input type="number" required="true" id="decimals" name="decimals" />
+      </p>
+      <p>
+        <label>supply: </label>
+        <input type="number" required="true" id="supply" name="supply" />
+      </p>
       <button onclick="deployToken()">Deploy Token</button>
     </div>
   </body>
