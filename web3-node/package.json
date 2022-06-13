@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "ethereumjs-tx": "^2.1.2",
+    "web3": "^1.7.3"
+  },
+  "name": "web3-node",
+  "version": "1.0.0",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
