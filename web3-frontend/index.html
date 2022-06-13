@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>web3.js in frontend</title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
+    <script src="./tokenfactory-abi.js"></script>
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <h1>ETH Balance Fetcher</h1>
+    <div>
+      <h2>ETH:</h2>
+      <p id="eth-balance"></p>
+    </div>
+    <div>
+      <button onclick="enableMetamask()">Connect Metamask</button>
+      <button onclick="changeEthBalance()">Check my Balance</button>
+      <button onclick="deployToken()">Deploy Token</button>
+    </div>
+  </body>
+</html>
