@@ -13,7 +13,7 @@ gas = web3.eth.estimate_gas(
 )
 gas_price = web3.eth.gas_price
 
-tx_hash = web3.eth.sendTransaction(
+tx_hash = web3.eth.send_transaction(
     {
         "from": ADDRESS_1,
         "to": ADDRESS_2,
