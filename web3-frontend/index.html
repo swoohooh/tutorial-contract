@@ -4,8 +4,8 @@
     <title>web3.js in frontend</title>
     <meta charset="utf-8" />
     <script src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
-    <script src="./tokenfactory-abi.js"></script>
-    <script src="./index.js"></script>
+    <!-- <script src="./tokenfactory-abi.js"></script> -->
+    <script type="module" src="./index.js"></script>
   </head>
   <body>
     <h1>ETH Balance Fetcher</h1>
@@ -14,8 +14,8 @@
       <p id="eth-balance"></p>
     </div>
     <div>
-      <button onclick="enableMetamask()">Connect Metamask</button>
-      <button onclick="changeEthBalance()">Check my Balance</button>
+      <button id="enableMetamaskButton">Connect Metamask</button>
+      <button id="changeEthBalanceButton">Check my Balance</button>
     </div>
     <div>
       <h2>Deploy Token</h2>
@@ -44,7 +44,7 @@
         <label>supply: </label>
         <input type="number" required="true" id="supply" name="supply" />
       </p>
-      <button onclick="deployToken()">Deploy Token</button>
+      <button id="deployTokenButton">Deploy Token</button>
     </div>
   </body>
 </html>
