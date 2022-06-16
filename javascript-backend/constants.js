@@ -1,6 +1,12 @@
 const ADDRESS_1 = process.env.ETH_ADDRESS_1;
 const ADDRESS_2 = process.env.ETH_ADDRESS_2;
 
+const PRIVATE_KEY_1 = Buffer.from(process.env.ETH_PRIVATE_KEY_1, "hex");
+const PRIVATE_KEY_2 = Buffer.from(process.env.ETH_PRIVATE_KEY_2, "hex");
+
+const PRIVATE_KEY_STR_1 = process.env.ETH_PRIVATE_KEY_1;
+const PRIVATE_KEY_STR_2 = process.env.ETH_PRIVATE_KEY_2;
+
 const INFURA_PROJECT_ID = process.env.INFURA_PROJECT_ID;
 const INFURA_MAINNET_ENDPOINT = process.env.INFURA_MAINNET_ENDPOINT;
 const INFURA_ROPSTEN_ENDPOINT = process.env.INFURA_ROPSTEN_ENDPOINT;
@@ -207,6 +213,10 @@ const CONTRACT_ABI = [
 export {
   ADDRESS_1,
   ADDRESS_2,
+  PRIVATE_KEY_1,
+  PRIVATE_KEY_2,
+  PRIVATE_KEY_STR_1,
+  PRIVATE_KEY_STR_2,
   INFURA_PROJECT_ID,
   INFURA_MAINNET_ENDPOINT,
   INFURA_ROPSTEN_ENDPOINT,
