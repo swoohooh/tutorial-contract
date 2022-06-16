@@ -19,6 +19,7 @@ tx_hash = web3.eth.sendTransaction(
         "to": ADDRESS_2,
         "value": value,
         "gas": gas,
+        # gasPrice is legacy
         "gasPrice": gas_price,
     }
 )
