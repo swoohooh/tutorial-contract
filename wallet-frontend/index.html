@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>web3.js in frontend</title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.7.8/dist/umd/index.min.js"></script>
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <h1>ETH Balance Fetcher</h1>
+    <div>
+      <h2>ETH:</h2>
+      <p id="eth-balance"></p>
+    </div>
+    <div>
+      <button id="enableMetamaskButton">Connect Metamask</button>
+      <button id="changeEthBalanceButton">Check my Balance</button>
+    </div>
+    <div>
+      <p>
+        <button id="enableWalletConnectButton">Connect WalletConnect</button>
+        <button id="changeEthBalanceButton2">Check my Balance</button>
+      </p>
+    </div>
+    <div>
+      <h2>Deploy Token</h2>
+      <p>
+        <label>owner address: </label>
+        <input
+          type="text"
+          required="true"
+          id="owner-address"
+          name="owner-address"
+        />
+      </p>
+      <p>
+        <label>name: </label>
+        <input type="text" required="true" id="name" , name="name" />
+      </p>
+      <p>
+        <label>symbol: </label>
+        <input type="text" required="true" id="symbol" name="symbol" />
+      </p>
+      <p>
+        <label>decimals: </label>
+        <input type="number" required="true" id="decimals" name="decimals" />
+      </p>
+      <p>
+        <label>supply: </label>
+        <input type="number" required="true" id="supply" name="supply" />
+      </p>
+      <button id="deployTokenButton">Deploy Token</button>
+    </div>
+  </body>
+</html>
